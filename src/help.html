@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>User Guide</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+
+  </head>
+<body class="all">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12 head">
+        <h2> How to Use</h2>
+        <p>This is a simple simulator tool for Carbon cycle to obtain future carbon content in its different reservoirs by using expected values of carbon emission due to human activities.
+        Simulation starts from 1990 because precise values of carbon content was availabe according to relevent <a href="http://www3.geosc.psu.edu/~dmb53/DaveSTELLA/Carbon/c_cycle_models.htm">source</a> </p>
+        <p><b>Step 1:</b> In the home window, Click on <b>Simulator</b> button to go to simulator </p>
+        <p><b>Step 2:</b> Enter expected emission rate in each year in (year,carbon emission rate(in gigatons) ) pair in their respective input in <b>chronological order</b> ex: (2012, 8.8),(2020 , 10) . Initial value of 1990 is taken as 5.5gt.  </p>
+        <p><b>Step 3:</b> Click on <b>Add</b> button after entering each value. It will be displayed in region below in the order in which it is entered</p>
+        <p><b>Step 4:</b> After the values of (year,emission rate) is entered click on <b>Generate</b> button to see quantity of carbon in gigatons in different environmental components varying with time(1994 to 2095) </p>
+        <p><b>Step 5:</b> To quantity of carbon for specific year, Enter year in given column and click on <b>Find</b> button </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-12 head">
+        <h2> Equations and Formulas for Rate of Reactions</h2>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 head">
+        <h3> <i>Terrestrial Carbon Cycle</i></h3>
+      </div>
+    </div>
+    <IMG SRC="img/7.11.gif" class="img-fluid rounded mx-auto d-block" alt="terrrestial carbon cycle">
+    <br>
+    <h4>Model Construction</h4>
+    <p>The terrestrial portion of the carbon cycle includes just three reservoirs -- the atmosphere, the land biota, and the soil, but it involves two complex flows.
+    The structure of the terrestrial carbon cycle is relatively simple, as can be seen in Figure 7.11; this model design can be used, along with the equations below, to create a working model of this subsystem of the carbon cycle.</p>
+    <CENTER><FONT SIZE="-1" FACE="Helvetica"><B>EQUATIONS FOR MODEL OF
+    SIMPLE TERRESTRIAL CARBON CYCLE</B></FONT></CENTER>
+
+    <DL>
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>RESERVOIRS:</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Atmosphere = 600 {Gt
+          C -- 1 Gt=1e15 g -- from IPCC, 1995}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Land_Biota = 610 { Gt
+          C -- 1 Gt=1e15 g -- from IPCC, 1995}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Soil = 1580 { Gt C --
+          1 Gt=1e15 g -- from IPCC, 1995}</FONT></DD>
+       </DL>
+       </DD>
+
+       <DD>&nbsp;</DD>
+
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>FLOWS: (all in Gt
+       C/yr)</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">Soil_Respiration =
+          (49.4/INIT(Soil))*Soil*(1+(Tsens_sr*global_temp)) {initial
+          value from Siegenthaler and Sarmiento, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Plant_Respiration =
+          Photosynthesis*(50/100) {equation modified from Gifford, 1993;
+          initial value from Siegenthaler and Sarmiento,
+          1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">External_addition = 0.6
+          {volcanic emissions or fossil fuel burning, etc.} }</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Photosynthesis =
+          (Pmax*(pCO2_eff/(pCO2_eff+Khs)))*(1+(Tsens_p*global_temp))
+          {equation modified from Gifford, initial value from
+          S&amp;S}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Litter_fall =
+          50*(Land_Biota/610) {modified from Gifford, 1993 initial value
+          from S&amp;S}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Runoff =
+          .6*Soil/INIT(Soil) {value from S&amp;S}</FONT></DD>
+       </DL>
+       </DD>
+
+       <DD>&nbsp;</DD>
+
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>CONVERTERS:</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">Khs = 62.5 {ppm CO2; this
+          is the half-saturation value -- the level of atmospheric C at
+          which the rate of photosynthesis is half of the ultimate
+          saturation value, given that particular temperature; modified
+          from Gifford, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Pmax = ((Khs+250)*100)/250
+          {Gt C/yr; this is the maximum rate of photosynthesis possible
+          at the saturation level of CO2, ignoring the temperature effect
+          -- from Gifford, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">global_temp =
+          (pCO2_atm-280)*.01 {&#176;C relative to today's temp of 15;
+          from K&amp;S, 1994}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">pCO2_atm =
+          Atmosphere*(280/600) {ppm}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">pCO2_min = 30 {ppm -- no
+          photosynthesis can occur below this level; from Gifford,
+          1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">pCO2_eff =
+          pCO2_atm-pCO2_min {ppm; the effective atmospheric CO2
+          concentration}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Tsens_p = .04 {&#176;C-1;
+          temperature sensitivity factor for photosynthesis; after
+          Gifford}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Tsens_sr = .10 {&#176;C-1;
+          temperature sensitivity factor for soil respiration; after
+          Gifford}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Atmos_Change =
+          Atmosphere-600 { Gt C; change in atmospheric carbon -- used to
+          compare results of various experiments}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Land_Biota_Change =
+          Land_Biota-610 {Gt C}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Soil_Change = Soil-1580
+          {Gt C}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Total_Change =
+          Atmos_Change+Land_Biota_Change+Soil_Change {Gt C}</FONT></DD>
+       </DL>
+       </DD>
+    </DL>
+
+    <P>
+
+    <HR>
+
+    <FONT SIZE="+1" FACE="Times">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6 head">
+          <h3> <i>Oceanic Carbon Cycle</i></h3>
+        </div>
+      </div>
+    <IMG SRC="img/7.13.gif" class="img-fluid rounded mx-auto d-block" alt="terrrestial carbon cycle">
+    <br>
+    <h4>Model Construction</h4>
+    <p>Ocean-atmosphere carbon cycle will be an open system, like our terrestrial carbon cycle models, with
+       just three reservoirs, representing the atmosphere, the surface water of the ocean (to a depth of 100 m), the
+        marine biota, and the deep ocean (everything below 100 m). The biologic pump is handled in the simplest way possible Transfers
+        of carbon through upwelling and downwelling are similarly combined into a bi-flow called Ocean Turnover.
+        But, in terms of the mathematics, these changes make no difference, so we have not really altered the model. </p>
+    <B>EQUATIONS FOR MODEL OF SIMPLE
+    OCEAN - ATMOSPHERE CARBON CYCLE</B></FONT></P>
+
+    <DL>
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>Reservoirs:</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Atmosphere = 600 {Gt
+          C}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Surface_Ocean =
+          891.62591 {Gt C}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">INIT Deep_Ocean = 38000
+          {Gt C}</FONT></DD>
+       </DL>
+       </DD>
+
+       <DD>&nbsp;</DD>
+
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>Flows:</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">external_additions = 0
+          {volcanic emissions or fossil fuel burning, etc.}</FONT>
+
+          <DL>
+             <DT><FONT SIZE="-1" FACE="Helvetica">oc--atm_exchange =
+             k_ao*(pCO2_atm-pCO2_Ocean)</FONT></DT>
+          </DL>
+          </DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">bio_pump = 10</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">ocean_turnover =
+          100*(Deep_Ocean/INIT(Deep_Ocean))-90.6*(Surface_Ocean/INIT(Surface_Ocean))
+          {this is upwelling minus downwelling}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">burial =
+          0.6*(bio_pump/10)</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">runoff = 0.6</FONT></DD>
+       </DL>
+       </DD>
+
+       <DD>&nbsp;</DD>
+
+       <DD><FONT SIZE="-1" FACE="Helvetica"><B>Converters:</B></FONT>
+
+       <DL>
+          <DD><FONT SIZE="-1" FACE="Helvetica">Alk_Surf = 2.22 {slightly
+          modified from Walker, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">CO3 = (Alk_Surf-HCO3)/2
+          {following Walker, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">HCO3 =
+          (Surf_C_conc-SQRT(Surf_C_conc^2-Alk_Surf*(2*Surf_C_conc-Alk_Surf)*(1-4*Kcarb)))/(1-
+          4*Kcarb) {following Walker, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Kcarb =
+          .000575+.000006*(T_surf-278) {following Walker,
+          1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">KCO2 =
+          .035+.0019*(T_surf-278) {following Walker, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">k_ao = .278 {Gt C/yr/ppm
+          -- the observationally-derived rate constant; this is for the
+          entire surface area of the ocean}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">pCO2_atm =
+          Atmosphere*(280/600)</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">pCO2_Ocean =
+          280*KCO2*(HCO3^2/CO3) {following Walker, 1993}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Surf_C_conc =
+          (Surface_Ocean/12000)/Vol_surf {1e18 moles/m^3}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">T_surf = 288 {&#176;K
+          following Walker, 1993}}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">Vol_surf = .0363 {units
+          are 1E18 m^3 -- this is the upper 100 m}</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">del_atm =
+          (Atmosphere-600)-(DELAY(Atmosphere,1)-600)</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">del_deep_ocean =
+          (Deep_Ocean-INIT(Deep_Ocean))-(DELAY(Deep_Ocean,
+          1)-INIT(Deep_Ocean))</FONT></DD>
+
+          <DD><FONT SIZE="-1" FACE="Helvetica">del_surf_ocean =
+          (Surface_Ocean-INIT(Surface_Ocean))-(DELAY(Surface_Ocean, 1)-
+          INIT(Surface_Ocean))</FONT></DD>
+       </DL>
+       </DD>
+    </DL>
+
+    <P>
+
+    <HR>
+
+    <A NAME=exps3></A><A HREF="#top">
+  </div>
+
+</body>
+</html>

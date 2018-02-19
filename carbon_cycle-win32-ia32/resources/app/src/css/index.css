@@ -1,0 +1,20 @@
+.container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.head{
+  text-align: center;
+}
+p{
+  text-align: justify;
+}
+html,body{
+  height: 100%;
+}
+.all{
+
+  background: linear-gradient(rgb(133, 224, 70),white,rgb(133, 224, 70) );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

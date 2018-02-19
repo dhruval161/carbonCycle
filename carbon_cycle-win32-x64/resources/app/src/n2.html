@@ -1,0 +1,158 @@
+<html>
+<head></head>
+<body>
+Another, simpler option is to develop a simple relationship based on
+the known history of atmospheric CO<SUB>2</SUB> and global
+temperature.
+
+><IMG SRC="img/Image2.gif" WIDTH=143 HEIGHT=18 ALIGN=bottom>
+
+
+
+
+<P><FONT SIZE="+1" FACE="Times">The accumulated results indicate that
+our function for photosynthesis should satisfy the following
+characteristics:</FONT></P>
+
+<BLOCKQUOTE><FONT SIZE="+1" FACE="Times">1) the global flow should be
+   100 Gt C/yr (one gigaton of carbon per year; 1Gt =
+   10</FONT><FONT FACE="Times">15</FONT><FONT SIZE="+1" FACE="Times">g)</FONT>
+
+   <P><FONT SIZE="+1" FACE="Times">2) the rate should increase at
+   higher atmospheric CO<SUB>2</SUB> level, but there should be a
+   saturation point, where additional increases in atmospheric
+   CO<SUB>2</SUB> yield no further increase in the rate of
+   photosynthesis</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">3) the rate should increase with
+   increasing temperature.</FONT></P></BLOCKQUOTE>
+
+
+
+<P><FONT SIZE="+1" FACE="Times">There are several ways to construct
+an equation that incorporates this information, but here, we use the
+following:</FONT></P>
+
+<BLOCKQUOTE><IMG SRC="img/5.gif" WIDTH=348 HEIGHT=128 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom>
+
+
+
+
+
+ <P><FONT SIZE="+1" FACE="Times">F<SUB>p</SUB> is the global rate
+   of photosynthetic uptake of CO<SUB>2</SUB> in GtC/yr.</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">P<SUB>max</SUB> is a parameter
+   with units of GtC/yr that is used to force the equation for
+   F<SUB>p</SUB> to give the proper value corresponding to the
+   starting conditions of the model.</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">K<SUB>hs</SUB> = 62.5 ppm -- the
+   half-saturation value -- the atmospheric CO<SUB>2</SUB>
+   concentration at which the rate of photosynthesis, F<SUB>p</SUB>,
+   is half of the ultimate saturation value, given that particular
+   temperature</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">pCO2<SUB>atm,init</SUB></FONT><FONT FACE="Times">
+   </FONT><FONT SIZE="+1" FACE="Times">= 280 ppm -- the
+   pre-industrial atmospheric CO<SUB>2</SUB> concentration</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">pCO2<SUB>atm,min</SUB></FONT><FONT FACE="Times">
+   </FONT><FONT SIZE="+1" FACE="Times">= 30 ppm -- value below which
+   no photosynthesis can occur</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">pCO2<SUB>eff</SUB></FONT><FONT FACE="Times">
+   </FONT><FONT SIZE="+1" FACE="Times">= pCO2<SUB>atm</SUB> -
+   pCO2<SUB>atm,min</SUB>-- the effective atmospheric CO<SUB>2</SUB>
+   concentration</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">F<SUB>p,init</SUB> = 100 GtC/yr --
+   the initial value for global photosynthesis</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Times">Tsens<SUB>p</SUB> = 0.04 --
+   establishes the increase of F<SUB>p</SUB> per degree of
+   warming</FONT></P>
+
+   <P><FONT SIZE="+1" FACE="Symbol">D</FONT><FONT SIZE="+1" FACE="Times">T
+   = T - T<SUB>init</SUB></FONT><FONT SIZE="+2" FACE="Times"><SUB>
+   </SUB></FONT><FONT SIZE="+1" FACE="Times">-- temp. difference
+   relative to initial temp., T<SUB>init</SUB> is set to 0</FONT></P>
+
+
+
+
+   <P><FONT SIZE="+1" FACE="Times">For the purposes of our model, we
+will formulate plant respiration in the following manner:</FONT></P>
+
+<BLOCKQUOTE><BLOCKQUOTE><FONT SIZE="+1">F<SUB>pr</SUB> =
+      F<SUB>p</SUB> * (50/100)</FONT>
+
+
+<P><FONT SIZE="+1" FACE="Times">where F</FONT><FONT SIZE="+2" FACE="Times"><SUB>pr</SUB></FONT><FONT SIZE="+1" FACE="Times">
+is the rate of global plant respiration in Gt C/yr and
+F</FONT><FONT SIZE="+2" FACE="Times"><SUB>p</SUB></FONT><FONT SIZE="+1" FACE="Times">
+is the rate of global photosynthesis by land plants.</FONT></P>
+
+
+
+
+
+<B>Litter Fall </B>
+
+
+<P><FONT SIZE="+1" FACE="Times">Dead plant material enters the soil
+in two ways -- it falls on the surface as litter, and it is
+contributed below the surface from roots.</FONT></P>
+
+<FONT SIZE="+1">F</FONT><FONT SIZE="+3"><SUB>lf</SUB></FONT><FONT SIZE="+1">
+   = land_biota * (50/INIT(land_biota</FONT><FONT SIZE="+2" FACE="Times">)</FONT>
+<P><FONT SIZE="+1" FACE="Times">where
+</FONT><FONT SIZE="+1">F</FONT><FONT SIZE="+3"><SUB>lf</SUB></FONT><FONT SIZE="+1" FACE="Times">
+is the flow in Gt C/yr and
+</FONT><FONT SIZE="+1">land_biota</FONT><FONT SIZE="+1" FACE="Times">
+is the amount of carbon stored in the land biota (plants) at any
+given time.</FONT></P>
+
+
+
+
+<B>Soil Respiration</B>
+<P><FONT SIZE="+1" FACE="Times">Respiration also occurs within the
+soil, as microorganisms consume the dead plant material.</FONT></P>
+
+
+<IMG SRC="img/6.gif" WIDTH=320 HEIGHT=111 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom>
+<P><FONT SIZE="+1" FACE="Times">The temperature sensitivity part of
+the equation is a linear function like that used in defining
+photosynthesis. The formulation here gives an increase in soil
+respiration by a factor of 2.0 if the temperature increases
+10&#176;C.</FONT></P>
+
+
+
+<B>Runoff</B>
+<IMG SRC="img/7.gif" WIDTH=188 HEIGHT=109 X-CLARIS-USEIMAGEWIDTH X-CLARIS-USEIMAGEHEIGHT ALIGN=bottom>
+
+
+<P><FONT SIZE="+1" FACE="Times">where F<SUB>row</SUB> and Froc are
+the runoff flows to the warm ocean and the cold ocean
+respectively.</FONT></P>
+
+
+
+
+
+<BLOCKQUOTE>F<SUB>atm-oc</SUB> = k<SUB>oa</SUB> * (pCO2<SUB>atm</SUB>
+   - pCO2<SUB>oc</SUB>) * A<SUB>oc</SUB></BLOCKQUOTE>
+
+<P><FONT SIZE="+1" FACE="Times">where
+</FONT>A<SUB>oc</SUB><FONT SIZE="+1" FACE="Times"> is the surface
+area of the ocean and the pCO<SUB>2</SUB> values for the atmosphere
+and ocean are expressed in units of ppm. The flow units are grams of
+carbon per year, which can then be converted to Gigatons of carbon
+per year, using the relationship that 1Gt = 1 x 10</FONT></P>
+
+
+
+</body>
+</html>

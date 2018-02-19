@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simulator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="Chart.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> -->
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <!-- normal script imports etc  -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+
+
+  </head>
+  <body class="all">
+    <div class="container">
+
+      <div class="row justify-content-md-center">
+        <div class="col-md-6 head">
+          <h1>Simulator</h1>
+        </div>
+      </div>
+
+      <form class="">
+        <h3>Add future emission rates</h3>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="year">Year(after 2010)</label>
+            <input type="text" class="form-control" name="year" id="year" placeholder="ex : 2024">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Changed Emission Rate</label>
+            <input type="number" class="form-control" id="rate" placeholder="(in Gigatons)">
+          </div>
+          <div class="form-group col-md-4">
+            <button type="button" class="btn btn-primary align-center" id="add">Add</button>
+          </div>
+          <!--<span class="badge badge-light" data-toggle="tooltip" data-placement="top" title="Tooltip on bottom">?</span>-->
+
+        </div>
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          Enter expected emission rates <b>after year 2010</b>  in <b>chronological order</b> ( The last updated emission rate is considered for every year). default emission rates is <b>5.5</b> for every year after 2010
+        </small>
+        <br><br>
+        <h5>Input emission rates :</h5>
+        <div class="rates">
+        </div>
+        <button type="button" class="btn btn-primary align-center" id="gen">Generate</button>
+
+      </form>
+
+
+      <div id="atm-t"></div>
+      <div id="graph-container">
+        <!--<canvas id="graph" width="1000px" height="400px"></canvas>-->
+      </div>
+      <div id="graph-container2">
+        <!--<canvas id="graph2" width="1000px" height="400px"></canvas>-->
+      </div>
+      <div id="graph-container3">
+        <!--<canvas id="graph3" width="1000px" height="400px"></canvas>-->
+      </div>
+      <div id="graph-container4">
+        <!--<canvas id="graph4" width="1000px" height="400px"></canvas>-->
+      </div>
+      <div id="graph-container5">
+        <!--<canvas id="graph5" width="1000px" height="400px"></canvas>-->
+      </div>
+
+      <br><br><br>
+      <form class="">
+        <h3>Find Carbon Reservoir content for specific year </h3>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="yearfind">Year (after 2010)</label>
+            <input type="text" class="form-control" name="yearfind" id="yearfind" placeholder="ex : 2024">
+          </div>
+
+        </div>
+
+        <button type="button" class="btn btn-primary align-center" id="find">Find</button>
+      </form>
+      <div id="blocks">
+
+      </div>
+
+
+
+    </div>
+    <script type="text/javascript">
+
+    </script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+  </body>
+</html>

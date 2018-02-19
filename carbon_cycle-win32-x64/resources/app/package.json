@@ -1,0 +1,19 @@
+{
+  "name": "carbon_cycle",
+  "version": "1.0.0",
+  "description": "An app that displays change in carbon content in carbon sinks with change in carbon emission rate and deforestation and afforestation",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-packager . --platform=win32 --arch=all --icon=icon.ico",
+    "start": "electron ."
+  },
+  "author": "Dhruval Suthar",
+  "license": "ISC",
+  "dependencies": {
+    "asar": "^0.14.2",
+    "chart.js": "^2.7.1",
+    "electron": "^1.8.2",
+    "electron-chartjs": "^1.0.0",
+    "electron-packager": "^11.0.1"
+  }
+}
